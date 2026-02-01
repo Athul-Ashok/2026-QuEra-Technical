@@ -2,18 +2,13 @@
 
 ## Team Overview & Challenge Context
 
-This documentation details our team's comprehensive approach to the QuEra technical challenge for iQuHACK 2026, which focused on noise modeling and parallelism in quantum error correction (QEC) circuits. Our work builds upon QuEra's magic state distillation research and explores Steane error correction protocols for the [[7,1,3]] color code.
+This documentation details our team's approach to the QuEra technical challenge for iQuHACK 2026! We focused on noise modeling and parallelism in quantum error correction circuits. Our work explores Gemini-based and depolarization noise modeling surrounding the Steane [[7,1,3]] color code circuit.
 
----
-
-## Executive Summary
-
-We successfully implemented and analyzed a quantum memory experiment using Steane error correction on a distance-3 color code. Our approach combined theoretical understanding of QEC with practical circuit implementation using Bloqade's Squin kernels, validated through extensive simulations using both Stim and Tsim backends.
+We successfully implemented and analyzed a quantum memory experiment using Steane error correction on a distance-3 color code. Our approach involved picking up an understanding of QEC Theory from the ground up and applying to a circuit implementation using Bloqade's Squin kernels. We evaluated fidelity performance through simulations using both Stim and Tsim backends. Cirq translation was also utilized for doing Gemini-based noise modeling.
 
 **Key Achievements:**
 - Implemented complete Steane QEC protocol with flag qubit syndrome extraction
-- Developed modular noise injection framework for systematic error analysis
-- Achieved perfect logical state preservation in noiseless simulations
+- Developed noise injection in the form depolarization and gemini one zone noise
 - Characterized error propagation patterns under depolarization noise
 - Established foundation for scaling to distance-5 implementations
 
@@ -23,13 +18,7 @@ We successfully implemented and analyzed a quantum memory experiment using Stean
 
 ### Color Code Fundamentals
 
-Our journey began with understanding the [[7,1,3]] color code structure from QuEra's magic state distillation paper. The color code provides:
-- **Distance 3** error correction capability
-- **7 physical qubits** encoding 1 logical qubit
-- **3 independent stabilizer generators** for error detection
-- **Natural fault-tolerant properties** suited for neutral atom platforms
-
-The key insight we gained was that the color code's triangular lattice structure provides elegant symmetry that simplifies syndrome extraction and error correction operations.
+Our journey began with understanding the [[7,1,3]] color code structure from QuEra's magic state distillation paper. This involved picking up an understanding of the theory behind universal gatesets, syndrome extraction, and more. Though, ultimately we realized the project's core focus wasn't necessarily on magic state distillation and so we immediately started our color code implementation and analysis. Amidst this process, we picked up on interesting behaviors pertaining to the fault-tolerant properties inherent to neutral atom platforms thanks capability to transpile from Squin to Cirq to focus our observations on the behavior of neutral atom's native gateset.
 
 ### Steane Error Correction Protocol
 
