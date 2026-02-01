@@ -33,7 +33,7 @@ warnings.filterwarnings("ignore")
         3: 1 qbit noise acting in parallel on 2 qbits
 """
 @squin.kernel
-def depolarize_data(NOISE_LOC=1, TYPE_INITIAL=1, TYPE_OTHER=1, P=0.005):
+def depolarize_kernal(NOISE_LOC=1, TYPE_INITIAL=1, TYPE_OTHER=1, P=0.005):
     q_data = squin.qalloc(7)
     # squin.u3(theta, phi, 0, q_data[6])
 
